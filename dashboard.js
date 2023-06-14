@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(getSpreadsheetData);
 
 function getSpreadsheetData() {
   var spreadsheetId = "1uGopZFDGGgWaSM70kXzdqGVbd6_tmFcaTfYJpwRFONs";
-  var range = "qty_by_region!A1:E3";
+  var range = "qtys_by_regions!A1:C5";
 
   var query = new google.visualization.Query(
     "https://docs.google.com/spreadsheets/d/" +
@@ -31,10 +31,16 @@ function drawCharts(data) {
     height: 300,
   };
 
+  var options_bar = {
+    title: "Grafik Ketersediaan Kategori Makanan di Berbagai Wilayah",
+    width: 1600,
+    height: 800,
+  };
+
   var chart1 = new google.visualization.ColumnChart(
     document.getElementById("chart1")
   );
-  chart1.draw(data, options);
+  chart1.draw(data, options_bar);
 
   var chart2 = new google.visualization.PieChart(
     document.getElementById("chart2")
