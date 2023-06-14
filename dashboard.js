@@ -47,7 +47,7 @@ function drawCharts(data) {
   );
   chart2.draw(data, options);
 
-  var chart3 = new google.visualization.AreaChart(
+  var chart3 = new google.visualization.PieChart(
     document.getElementById("chart3")
   );
   chart3.draw(data, options);
